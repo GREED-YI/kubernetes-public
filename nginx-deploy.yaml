@@ -14,10 +14,10 @@ spec:
       labels:
         app: nginx
     spec:
-      template:
-        spec:
-          imagePullSecrets:
-            - name: ecr-secret
-          containers:
-            - name: nginx
-              image: 811221506617.dkr.ecr.ap-southeast-2.amazonaws.com/ecr-nginx:v1.0
+      imagePullSecrets:
+      - name: ecr-secret
+      containers:
+      - name: eks-nginx
+        image: 811221506617.dkr.ecr.ap-southeast-2.amazonaws.com/ecr-nginx:v1.0
+        ports:
+        - containerPort: 80
